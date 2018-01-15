@@ -29,7 +29,7 @@ class Scraper
   end
 
   def make_courses
-    @doc.each
+    # @doc.each
   end
 
 end
