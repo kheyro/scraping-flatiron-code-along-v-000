@@ -5,6 +5,8 @@ require_relative './course.rb'
 
 class Scraper
 
+  attr_accessor :doc
+
   def print_courses
     self.make_courses
     Course.all.each do |course|
