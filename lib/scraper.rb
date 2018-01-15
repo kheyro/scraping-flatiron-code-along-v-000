@@ -28,6 +28,7 @@ class Scraper
     @doc.css("h2")
   end
 
-
+  def make_courses
+  end
 
 end
