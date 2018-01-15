@@ -7,6 +7,10 @@ class Scraper
 
   attr_accessor :doc
 
+  def initialize
+    @doc = ""
+  end
+
   def print_courses
     self.make_courses
     Course.all.each do |course|
