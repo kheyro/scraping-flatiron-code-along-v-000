@@ -30,6 +30,9 @@ class Scraper
 
   def make_courses
     # @doc.each
+    @doc.each do |post|
+      Course.new(post.css("h2"), post.css(".date"), post.css("p"))
+    end
   end
 
 end
