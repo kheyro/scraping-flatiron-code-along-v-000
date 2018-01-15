@@ -33,9 +33,9 @@ class Scraper
     @doc = @doc.css(".post")
     @doc.each do |post|
       new_course = Course.new
-      new_course.title = post.css("h2")
-      new_course.schedule = post.css(".date")
-      new_course.description = post.css("p")
+      new_course.title = post.css("h2").text
+      new_course.schedule = post.css(".date").text
+      new_course.description = post.css("p").text
     end
   end
 
