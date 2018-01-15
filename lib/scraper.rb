@@ -7,10 +7,6 @@ class Scraper
 
   attr_accessor :doc
 
-  def initialize
-    @doc = ""
-  end
-
   def print_courses
     self.make_courses
     Course.all.each do |course|
@@ -33,7 +29,7 @@ class Scraper
   end
 
   def make_courses
-    # @doc.each
+    @doc = Nokogiri::HTML(open("http://learn-co-curriculum.github.io/site-for-scraping/courses"))
     @doc.each do |post|
       Course.new(post.css("h2"), post.css(".date"), post.css("p"))
     end
